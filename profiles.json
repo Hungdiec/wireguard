@@ -1,0 +1,44 @@
+{
+    "HHD0AAV1PFE": {
+        "config_data": {
+            "router_ip": "hhd0aav1pfe.sn.mynetname.net",
+            "router_user": "admin",
+            "router_pass": "Hungdiec99",
+            "wg_interface": "wireguard1",
+            "server_public_key": "F/FeTDCt+5NbDGQNaXNXvQf2LALJim82LfCkBerEN0I=",
+            "server_endpoint": "hhd0aav1pfe.sn.mynetname.net:13231",
+            "wg_subnet": "192.168.99.1/24"
+        },
+        "peer_configs": {
+            "*33": "[Interface]\nPrivateKey = cFJCGWCtiDSZuSEOtr+MmSRIrnfw8jI8s7L6nrru/e4=\nAddress = 192.168.99.2/32\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = F/FeTDCt+5NbDGQNaXNXvQf2LALJim82LfCkBerEN0I=\nEndpoint = hhd0aav1pfe.sn.mynetname.net:13231\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25\n",
+            "*34": "[Interface]\nPrivateKey = eeZIME3lrBZl1bgciBOU+yGagL03qZgENuR5xjQAxQ0=\nAddress = 192.168.99.3/32\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = F/FeTDCt+5NbDGQNaXNXvQf2LALJim82LfCkBerEN0I=\nEndpoint = hhd0aav1pfe.sn.mynetname.net:13231\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25\n",
+            "*3A": "[Interface]\nPrivateKey = uQmT9hu27TG3aHZNShnGlPyw1GkWPIOBMts/EiZt8Xc=\nAddress = 192.168.99.5/32\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = F/FeTDCt+5NbDGQNaXNXvQf2LALJim82LfCkBerEN0I=\nEndpoint = hhd0aav1pfe.sn.mynetname.net:13231\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25\n",
+            "*3B": "[Interface]\nPrivateKey = X1na+8hINq6emVBOlbZlbxyqmy1oWH81oJw+eXGI+To=\nAddress = 192.168.99.6/32\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = F/FeTDCt+5NbDGQNaXNXvQf2LALJim82LfCkBerEN0I=\nEndpoint = hhd0aav1pfe.sn.mynetname.net:13231\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25\n"
+        },
+        "ip_assignments": {
+            "*3E": "192.168.99.4",
+            "*3F": "192.168.99.5"
+        },
+        "assigned_ips": [
+            "192.168.99.2",
+            "192.168.99.3",
+            "192.168.99.4",
+            "192.168.99.5"
+        ]
+    },
+    "HFA09ECAS84": {
+        "config_data": {
+            "router_ip": "hfa09ecas84.sn.mynetname.net",
+            "router_user": "admin",
+            "router_pass": "33Duongthanh@1968",
+            "wg_interface": "wireguard1",
+            "server_public_key": "1ngbezWRZ95bTWRMrS53LOzDGWv6ZUPB5Jv5bg67/3A=",
+            "server_endpoint": "hfa09ecas84.sn.mynetname.net:51820",
+            "wg_subnet": "192.168.99.1/24"
+        },
+        "peer_configs": {
+            "*19": "[Interface]\nPrivateKey = VgzRs8bJ1peQFA+e/V0FQAZ7ksmZaBCdEAuIAVWt4as=\nAddress = 192.168.99.2/32\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = vM0Ap+mh6Qy3eMachCwYY98HE+31XahkFucQiMBeLHc=\nEndpoint = hfa09ecas84.sn.mynetname.net:51820\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25\n",
+            "*1A": "[Interface]\nPrivateKey = KUyd7+3SUPZzdigLsWLzhRRa4IXzpvFbSBNu/ezxPQA=\nAddress = 192.168.99.2/32\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = vM0Ap+mh6Qy3eMachCwYY98HE+31XahkFucQiMBeLHc=\nEndpoint = hfa09ecas84.sn.mynetname.net:51820\nAllowedIPs = 0.0.0.0/0\nPersistentKeepalive = 25\n"
+        }
+    }
+}
