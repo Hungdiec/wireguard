@@ -12,9 +12,12 @@ import nacl.bindings
 from librouteros import connect
 from librouteros.exceptions import LibRouterosError
 from ipaddress import ip_network, AddressValueError
-
+from functools import wraps
+from os import environ
 # For QR code generation
 import qrcode
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 app.config['DEBUG'] = False
@@ -33,6 +36,13 @@ else:
     logger.addHandler(console_handler)
 
 PROFILES_FILE = os.path.join(os.path.dirname(__file__), "profiles.json")
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'logged_in' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 def load_profiles():
     """Loads profiles from profiles.json. Returns an empty dict if file not found or error."""
@@ -182,8 +192,29 @@ def get_current_peers(api):
         logger.error(f"Error fetching peers: {e}")
         peers = []
     return peers
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        if username == environ.get('ADMIN_USER') and \
+           password == environ.get('ADMIN_PASS'):
+            session['logged_in'] = True
+            return redirect(url_for('index'))
+        else:
+            flash('Invalid credentials')
+    
+    return render_template('login.html')
+@app.route('/logout')
+def logout():
+    # Clear the session
+    session.clear()
+    # Redirect to login page
+    return redirect(url_for('login'))
 
 @app.route("/", methods=["GET", "POST"])
+@login_required
 def index():
     error = None
     current_peers = []
